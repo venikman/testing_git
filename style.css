@@ -1,8 +1,83 @@
-* {
-    color: green;
+@keyframes puppy {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-.puppy {
-    height: 300px;
-    
+body {
+    background-color: #090c15;
 }
+* {
+    color: #84ba64;
+}
+
+/*.puppy {
+    height: 300px;
+    animation: puppy 30s ease-in-out infinite;
+}*/
+
+.puppy-container{
+    animation: bounce 1s ease-in-out infinite;
+    position:relative;
+    z-index: 1;
+}
+.pic {
+    position:relative;
+    z-index: 50;
+    margin-left: 30px;
+    height: 150px;
+    border-radius: 10px;
+    animation-delay: 0.5s;
+    animation-duration: 3000ms;
+    animation-name: puppy;
+    /* animation-direction: alternate; */
+    animation-iteration-count: infinite;
+    
+  }
+
+@keyframes bounce {
+    0% { transform: translate3d(0, 0, 0);     }
+    50%   { transform: translate3d(0, 200px, 0); }
+    100% {transform: translate3d(0,0,0);}
+  }
+
+
+@keyframes grow {
+  from {
+    transform: scale(.5);
+  }
+  to {
+    transform: scale(4);
+  }
+}
+
+
+.square {
+    position: relative;
+    z-index: 0;
+    width: 300px;
+    height: 300px;
+    border: 1px solid white;
+    box-sizing: border-box;
+    background-color: antiquewhite;
+}
+
+.circle {
+    position: relative;
+    z-index: 0;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: black;
+    transform: scale(1);
+    transition: transform .3s ease-in-out;
+}
+
+.circle:hover {
+    transform: scale(1.3)
+}
+
